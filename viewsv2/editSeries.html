@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Edit - Azure Realm</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Bootstrap CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <!-- Select2 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+
+</head>
+
+<body class="bg-white">
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg border-bottom sticky-top">
+            <div class="container">
+                <a class="navbar-brand fw-bold text-white" href="#"><i class="bi bi-book"></i>
+                    <strong>JoyLeeBook</strong></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav me-auto">
+                        <li class="nav-item"><a class="nav-link  text-white" href="homeAdmin.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="genre.html">Genres</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">History</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="#">Library</a></li>
+                    </ul>
+                    <form class="d-flex me-3">
+                        <input class="form-control me-2" type="search" placeholder="Search manga..."
+                            aria-label="Search">
+                    </form>
+                    <a class="btn me-2 login" href="#">LOGIN</a>
+                    <a class="btn signup " href="#">SIGN UP</a>
+                </div>
+            </div>
+        </nav>
+        <!-- breadcrumb -->
+        <div class="container bg-light mt-2 pt-2 ">
+            <nav aria-label="breadcrumb b">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="homeAdmin.html">Home</a></li>
+                    <li class="breadcrumb-item"><a href="detailAdmin.html">Chronicles of the Azure Realm</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"> Edit </li>
+                </ol>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="container my-5">
+            <h3 class="fw-bold mb-4">Chỉnh sửa truyện</h3>
+            <form action="update-story" method="post">
+                <input type="hidden" name="id" value="1">
+                <div class="row g-4">
+                    <!-- Manga Cover Preview -->
+                    <!-- <div class="col-md-4">
+                    
+                </div> -->
+                    <div class="col-md-4">
+
+                        <label class="form-label fw-semibold">Ảnh bìa</label><br>
+                        <img src="https://tse3.mm.bing.net/th/id/OIP.F3yrH-SyeJJnLN7GQrA7kQHaJ4?rs=1&pid=ImgDetMain&o=7&rm=3"
+                            class="img-fluid rounded shadow mb-2" alt="Cover" style="width: 350px">
+                        <div class="mb-3">
+                            <input class="form-control" type="file" id="coverImage" name="coverImage" accept="image/*"
+                                style="width: 350px">
+                        </div>
+
+
+                    </div>
+
+                    <!-- Manga Info Fields -->
+                    <div class="col-md-8">
+                        <div class="mb-3">
+                            <label class="form-label">Tên truyện</label>
+                            <input type="text" class="form-control" name="title" value="Chronicles of the Azure Realm"
+                                required>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Tác giả</label>
+                            <input type="text" class="form-control" name="author" value="Akira Tanaka">
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Trạng thái</label>
+                            <select class="form-select" name="status">
+                                <option value="Ongoing" selected>Ongoing</option>
+                                <option value="Completed">Completed</option>
+                                <option value="Hiatus">Hiatus</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-3">
+                            <label class="form-label">Thể loại</label>
+                            <select class="form-select" id="genreSelect" name="genres" multiple>
+                                <option>Action</option>
+                                <option>Adventure</option>
+                                <option>Comedy</option>
+                                <option>Drama</option>
+                                <option>Fantasy</option>
+                                <option>Slice of Life</option>
+                                <option>Romance</option>
+                                <option>Horror</option>
+                                <option>Mystery</option>
+                                <option>Psychological</option>
+                                <option>Sci-Fi</option>
+                                <option>Supernatural</option>
+                                <option>Thriller</option>
+                                <option>Martial Arts</option>
+                                <option>Mecha</option>
+                                <option>Sports</option>
+                                <option>Historical</option>
+                                <option>Shoujo</option>
+                                <option>Shounen</option>
+                                <option>Seinen</option>
+                                <option>Josei</option>
+                                <option>School Life</option>
+                                <option>Tragedy</option>
+                                <option>Magic</option>
+                                <option>Game</option>
+                                <option>Music</option>
+                                <option>Military</option>
+                                <option>Demons</option>
+                                <option>Detective</option>
+                                <option>Ecchi</option>
+                                <option>Vampire</option>
+                                <option>Zombie</option>
+                                <option>Parody</option>
+                                <option>Space</option>
+                                <option>Police</option>
+                                <option>Kids</option>
+                                <option>Cars</option>
+                                <option>Samurai</option>
+                                <option>Harem</option>
+                                <option>Isekai</option>
+                                <option>Yaoi</option>
+                                <option>Yuri</option>
+                                <option>Doujinshi</option>
+                                <option>Gender Bender</option>
+                            </select>
+                        </div>
+
+
+
+                        <div class="mb-3">
+                            <label class="form-label">Tóm tắt</label>
+                            <textarea class="form-control" rows="5"
+                                name="synopsis">In a world where magic flows through crystalline formations...</textarea>
+                        </div>
+
+                        <!-- Action Buttons -->
+                        <div class="d-flex gap-2">
+                            <!-- <button type="submit" class="btn btn-success"></button> -->
+                            <a href="detailAdmin.html">Lưu</a>
+                            <button type="reset" class="btn btn-secondary">Đặt lại</button>
+                            <button type="button" class="btn btn-danger"
+                                onclick="confirm('Xác nhận xoá truyện này?') && deleteStory();">Xoá</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="mt-5">
+        <!-- Section About -->
+        <div class="text-white py-4" style="background-color: #8DA7C0;">
+            <div class="container text-center">
+                <h5 class="fw-bold mb-3">ABOUT US</h5>
+                <p class="mx-auto mb-0" style="max-width: 1000px;">
+                    JoyLeeBook is a Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                    incididunt ut
+                    labore et dolore magna aliqua.
+                    Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                    consequat.
+                    Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
+                    pariatur.
+                </p>
+            </div>
+        </div>
+
+        <!-- Section Social + Back to top -->
+        <div class="py-3" style="background-color: #517594;  justify-self: center;">
+            <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center">
+
+                <!-- Social icons -->
+                <div class="offset-md-2 col-md-7 d-flex justify-content-center gap-4 mb-3 mb-md-0">
+                    <a href="#" class="text-dark fs-4"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="text-dark fs-4"><i class="fab fa-facebook"></i></a>
+                    <a href="#" class="text-dark fs-4"><i class="fab fa-tiktok"></i></a>
+                </div>
+
+                <!-- Back to top -->
+                <a href="#header" class="btn btn-light rounded-circle d-flex align-items-center justify-content-center"
+                    style="width: 40px; height: 40px;">
+                    <i class="fas fa-arrow-up text-dark"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <script>
+        function deleteStory() {
+            // Tùy backend: chuyển hướng hoặc gọi API xoá
+            alert("Đã gửi yêu cầu xoá truyện.");
+        }
+    </script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- jQuery + Select2 JS -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            $('#genreSelect').select2({
+                placeholder: "Chọn thể loại",
+                allowClear: true
+            });
+        });
+    </script>
+
+</body>
+
+</html>
